@@ -1,0 +1,546 @@
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+        /* font-family: 'Oswald', sans-serif; */
+        
+        @import url('https://fonts.googleapis.com/css2?family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+        /* font-family: 'KoHo', sans-serif; BAŞLIKLAR İÇİN KULLANILACAK*/
+        
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+        /* font-family: 'Source Sans Pro', sans-serif; METİNLER İÇİN KULLANILACAK */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        /* font-family: 'Bebas Neue', cursive; DAFFLİX ORİJİNAL FONTU*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            font-family: 'KoHo', sans-serif;
+            /* Başlıklar İçin Kullanılacak Font */
+            /* font-family: 'Source Sans Pro', sans-serif; /* */
+            background-color: rgb(50, 50, 50);
+        }
+        /* NAVİGASYON ÇUBUĞU BAŞLANGIÇ */
+        
+        .navbar {
+            width: 100%;
+            height: 55px;
+            background-color: rgb(50, 50, 50);
+            display: flex;
+            align-items: center;
+            padding: 0 20px 0 0;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            position: fixed;
+            z-index: 100;
+            box-shadow: 0 1px 10px black;
+            transition: all .5s ease;
+        }
+        
+        .navbar .fa-bars {
+            height: 100%;
+            width: auto;
+            float: left;
+            color: white;
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            padding: 0 25px 0 25px;
+        }
+        
+        .logo {
+            height: auto;
+            width: 90px;
+            position: relative;
+        }
+        
+        .menu-arama {
+            width: calc(100% - 350px);
+            height: 100%;
+            padding-left: 60px;
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            transition: all .5s ease;
+        }
+        
+        .menu-arama input {
+            width: 60%;
+            background-color: transparent;
+            padding: 8px 10px;
+            border-color: rgba(255, 255, 255, .5);
+            border-width: 1px 0 1px 1px;
+            border-style: solid;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+            margin: 0;
+            color: white;
+            float: left;
+        }
+        
+        .menu-arama button {
+            float: left;
+            background-color: transparent;
+            padding: 8px 20px;
+            border-color: rgba(255, 255, 255, .5);
+            border-width: 1px 1px 1px 0;
+            border-radius: 0 5px 5px 0;
+            border-style: solid;
+            color: white;
+            margin: 0;
+            transition: all .5s ease;
+        }
+        
+        .menu-arama button:hover {
+            color: rgba(50, 50, 50);
+            background-color: white;
+        }
+        
+        .profil-buton {
+            height: 100%;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all .5s ease;
+        }
+        
+        .profil-buton button {
+            background-color: transparent;
+            color: white;
+            padding: 10px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+            border: 1px solid white;
+            transition: all .5s ease;
+            font-weight: bold;
+        }
+        
+        .profil-buton button:hover {
+            background-color: white;
+            color: rgba(50, 50, 50);
+        }
+        
+        .sidebar {
+            width: 55px;
+            background-color: rgba(50, 50, 50);
+            box-shadow: 1px 0 10px black;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            padding-top: 90px;
+            align-items: center;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            transition: all .5s ease;
+        }
+        
+        .sidebar ul {
+            list-style-type: none;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .sidebar ul li {
+            width: 100%;
+            padding: 12px 0;
+            position: relative;
+        }
+        
+        .sidebar ul li p {
+            top: 0;
+            height: 100%;
+            display: flex;
+            position: absolute;
+            align-items: center;
+            padding: 0 20px 0 10px;
+            transition: all .5s ease;
+            border-radius: 0 5px 5px 0;
+            background-color: rgba(50, 50, 50);
+            left: -400%;
+            white-space: nowrap;
+            opacity: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .sidebar ul li:hover {
+            background-color: gray;
+            cursor: pointer;
+        }
+        
+        .sidebar ul li:hover>p {
+            opacity: 1;
+            left: 100%;
+        }
+        /* NAVİGASYON ÇUBUĞU BİTİŞ */
+        /* GÖVDE BAŞLANGIÇ*/
+        
+        .govde {
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            padding: 55px 0 0 55px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            transition: all .5s ease;
+            float: left;
+        }
+        
+        .buyuk-resim {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #151515), url('image/back.jpg');
+            background-size: cover;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            color: white;
+            justify-content: flex-start;
+            padding: 0 50% 0 10%;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+        }
+        
+        .buyuk-resim h1 {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .buyuk-resim p {
+            text-align: justify;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+        }
+        
+        .buyuk-resim button {
+            margin-top: 40px;
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid white;
+            border-radius: 5px;
+            color: white;
+            transition: all .5s ease;
+            font-weight: bold;
+        }
+        
+        .buyuk-resim button:hover {
+            background-color: white;
+            color: rgb(50, 50, 50);
+            cursor: pointer;
+        }
+        
+        .kutu-container {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            padding: 0 40px 0 40px;
+            background-color: transparent;
+            margin-top: 100px;
+        }
+        
+        .kutu {
+            width: 200px;
+            height: 300px;
+            background-color: black;
+            float: left;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 1s ease;
+            position: relative;
+        }
+        
+        .kutu:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.664);
+        }
+        
+        .kutu:hover i {
+            display: block;
+        }
+        
+        .kutu:hover .kutu-metin {
+            display: block;
+            background-color: rgba(0, 0, 0, .8);
+        }
+        
+        .kutu .fa-heart {
+            position: absolute;
+            font-size: 24px;
+            right: 10px;
+            top: 10px;
+            color: white;
+            display: none;
+            z-index: 2;
+            text-shadow: 0 0 20px black;
+        }
+        
+        .fa-heart:hover {
+            color: red;
+        }
+        
+        .kutu .fa-plus-square {
+            position: absolute;
+            font-size: 24px;
+            left: 10px;
+            top: 10px;
+            color: white;
+            display: none;
+            z-index: 2;
+            text-shadow: 0 0 20px black;
+        }
+        
+        .fa-plus-square:hover {
+            color: springgreen;
+        }
+        
+        .kutu-metin {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            display: none;
+            z-index: 2;
+            color: white;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+        }
+        
+        .kutu-metin h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            background-color: rgb(50, 50, 50);
+            padding: 5px 10px;
+            margin: 0;
+        }
+        
+        .kutu-metin p {
+            padding: 5px 10px 5px 10px;
+            font-size: 14px;
+        }
+        
+        .kutu img {
+            width: 100%;
+            height: 100%;
+            transition: all .5s ease;
+        }
+        
+        .ara-resim {
+            width: 100%;
+            height: 200px;
+            background-color: aliceblue;
+            position: relative;
+        }
+        
+        .ara-resim h1 {
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            padding-left: 50px;
+            font-size: 40px;
+            position: absolute;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 2;
+            color: white;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+        }
+        
+        .ara-resim img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .son-eklenenler {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 20px 20px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+        }
+        
+        .son-eklenenler h2 {
+            width: 100%;
+            color: white;
+            padding: 5px 0 10px 0;
+        }
+        
+        .son-eklenenler .kutu {
+            margin: 15px 5px;
+        }
+        /* GÖVDE BİTİŞ*/
+        
+        .arrow-t {
+            margin-left: 1px;
+            width: 15px;
+        }
+        
+        .container {
+            min-height: calc(100vh - 50px);
+            background-color: #151515;
+            color: white;
+        }
+        
+        .content-container {
+            margin-left: 60px;
+        }
+        
+        .featured-content {
+            height: 50vh;
+            background-color: red;
+            padding: 50px;
+        }
+        
+        .featured-title {
+            width: 300px;
+        }
+        
+        .featured-desc {
+            width: 500px;
+            color: rgb(255, 255, 255);
+            margin: 30px 0;
+        }
+        
+        .featured-button {
+            background-color: rgb(0, 183, 255);
+            color: white;
+            border-radius: 10px;
+            padding: 6px 14px;
+            border: none;
+            outline: none;
+            font-weight: bold;
+        }
+        
+        .movie-list-container {
+            padding: 0 20px;
+        }
+        
+        .movie-list-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .movie-list {
+            display: flex;
+            height: 300px;
+            align-items: center;
+            transform: translateX(0);
+            transition: all 1s ease-in-out;
+        }
+        
+        .movie-list-item {
+            margin-right: 20px;
+            position: relative;
+        }
+        
+        .movie-list-item:hover .movie-list-item-img {
+            transform: scale(1.2);
+            z-index: 5;
+            opacity: 0.5;
+        }
+        
+        .movie-list-item:hover .movie-list-item-title,
+        .movie-list-item:hover .movie-list-item-desc,
+        .movie-list-item:hover .movie-list-item-button {
+            opacity: 1;
+        }
+        
+        .movie-list-item-img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            transition: all 1s ease-in-out;
+            border-radius: 20px;
+        }
+        
+        .movie-list-item-title {
+            background-color: rgb(190, 0, 0);
+            padding: 0 10px;
+            font-weight: bold;
+            font-size: 20px;
+            position: absolute;
+            top: 0%;
+            left: 25%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            opacity: 0;
+            transition: 1s all ease-in-out;
+        }
+        
+        .movie-list-item-desc {
+            background-color: #333;
+            padding: 5px;
+            font-size: 12px;
+            position: absolute;
+            top: 25%;
+            left: 10%;
+            border-radius: 10px;
+            opacity: 0;
+            transition: 1s all ease-in-out;
+        }
+        
+        .movie-list-item-button {
+            padding: 6px;
+            background-color: rgb(0, 174, 255);
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            color: white;
+            cursor: pointer;
+            margin-top: 180px;
+            position: absolute;
+            bottom: 5px;
+            left: 90px;
+        }
+        
+        .arrow {
+            width: 50px;
+            position: absolute;
+            top: 120px;
+            right: 0;
+            cursor: pointer;
+        }
